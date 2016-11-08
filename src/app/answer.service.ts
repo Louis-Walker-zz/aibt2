@@ -46,7 +46,14 @@ export class AnswerService {
     return this.$jsonp.get("http://freegeoip.net/json", { search: params })
       .toPromise()
       .then( res => res.json())
-      .catch( err => {console.log(err)});
+      .catch( err => {
+        console.log(err);
+
+        return {
+          "ip": "",
+          "country_code": ""
+        }
+      });
   }
 
 }
