@@ -1,0 +1,31 @@
+.app-wrapper {
+    width: 60%;
+    max-width: 900px;
+    margin: 2vh auto;
+}
+
+.app-header {
+    display: flex;
+    margin-bottom: 1vh;
+    color: white;
+}
+
+.copyright, .version {
+    width: 50%;
+}
+
+.version {
+    text-align: right;
+}
+
+.answer {
+    font-size: 32px;
+}
+
+.answer--true {
+    color: green;
+}
+
+.answer--false {
+    color: red;
+}

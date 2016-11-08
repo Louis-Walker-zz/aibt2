@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { SubtitleService } from './subtitle.service';
+import { AnswerService } from './answer.service';
+
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [
+    SubtitleService,
+    AnswerService
+  ]
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
+  private ver: String = "1.0.0";
+
+  private subtitle: String;
+
+  private answer: Boolean;
+  private answers$: Observable<Boolean>;
+
+  constructor(
+    private $sub: SubtitleService,
+    private $ans: AnswerService,
+  ) {
+
+  }
+
+  ngOnInit() {
+    this.subtitle = this.$sub.getRandom();
+
+    this.answer = this.$ans.getAnswer();
+
+    this.$ans.postAnswer( this.answer );
+  }
 }
