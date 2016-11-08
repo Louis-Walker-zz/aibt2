@@ -1,13 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { JsonpModule } from '@angular/http';
 
+import { AngularFireModule } from 'angularfire2';
 import { MaterialModule } from '@angular/material';
+import { LocalStorageService } from "ng2-webstorage";
 
 import { AppComponent } from './app.component';
 import { AnswerRatioComponent } from './answer-ratio/answer-ratio.component';
+
 import { AnswerPipe } from './answer.pipe';
+
+import { firebaseConfig } from "./firebase.config";
 
 @NgModule({
   declarations: [
@@ -17,11 +21,11 @@ import { AnswerPipe } from './answer.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule,
+    JsonpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ LocalStorageService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
