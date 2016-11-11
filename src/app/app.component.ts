@@ -30,10 +30,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.$ans.generateAnswer();
+
     this.subtitle = this.$sub.getRandom();
-
-    this.answer = this.$ans.getAnswer();
-
-    this.$ans.postAnswer( this.answer );
   }
 }
