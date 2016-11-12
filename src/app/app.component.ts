@@ -5,7 +5,7 @@ import { AnswerService } from './answer.service';
 
 import { Observable } from "rxjs/Observable";
 
-import { LocalStorage, LocalStorageService } from "ng2-webstorage";
+import { LocalStorage } from "ng2-webstorage";
 
 @Component({
   selector: 'app-root',
@@ -28,8 +28,7 @@ export class AppComponent implements OnInit {
 
   constructor(
     private $sub: SubtitleService,
-    private $ans: AnswerService,
-    private $local: LocalStorageService
+    private $ans: AnswerService
   ) {
 
   }
@@ -37,9 +36,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.$ans.generateAnswer();
 
+    this.subtitle = this.$sub.getRandom();
+
     this.$ans.getAnswers( 8 )
       .subscribe( ans => this.answers = ans );
-
-    this.subtitle = this.$sub.getRandom();
   }
 }

@@ -25,8 +25,11 @@
       <ul>
         <li *ngFor="let ans of answers">
           <img 
-            [attr.alt]="ans.country"
-            [attr.src]="'../../assets/img/flags/' + ans.country + '.png'" />
+            [attr.alt]="ans.country_code"
+            [attr.src]="'../../assets/img/flags/' + ans.country_code + '.png'" 
+          />
+
+          <span>{{ans.country_name}}</span>
         </li>
       </ul>
     </md-card-content>

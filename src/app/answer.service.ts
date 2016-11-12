@@ -73,7 +73,8 @@ export class AnswerService {
 
         return {
           "ip": "",
-          "country_code": ""
+          "country_code": "",
+          "country_name": ""
         }
       });
   };
@@ -86,7 +87,8 @@ export class AnswerService {
       this.answers$.push({
         answer,
         "ip": geo["ip"],
-        "country": geo["country_code"]
+        "country_code": geo["country_code"],
+        "country_name": geo["country_name"]
       })
     )
   };
