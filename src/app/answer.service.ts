@@ -80,15 +80,18 @@ export class AnswerService {
   };
 
   // Firebase Methods
-  private postAnswer( answer: Boolean = this.lastAnswer.answer ): Promise<any> {
+  private postAnswer( 
+    answer: Answer = this.lastAnswer
+  ): Promise<any> {
     let _ans = this.lastAnswer;
 
     return this.getGeolocation().then( geo =>
       this.answers$.push({
-        answer,
-        "ip": geo["ip"],
+        "answer": answer.answer,
         "country_code": geo["country_code"],
-        "country_name": geo["country_name"]
+        "country_name": geo["country_name"],
+        "ip": geo["ip"],
+        "timestamp": answer.timestamp
       })
     )
   };
