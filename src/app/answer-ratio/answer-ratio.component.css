@@ -17,30 +17,402 @@
     background-color: red;
 }
 
-.ratio[data-per^="1"] {
-    width: 10%;
+.ratio[data-per="1"] {
+  width: 1%;
 }
-.ratio[data-per^="2"] {
-    width: 20%;
+
+.ratio[data-per="2"] {
+  width: 2%;
 }
-.ratio[data-per^="3"] {
-    width: 30%;
+
+.ratio[data-per="3"] {
+  width: 3%;
 }
-.ratio[data-per^="4"] {
-    width: 40%;
+
+.ratio[data-per="4"] {
+  width: 4%;
 }
-.ratio[data-per^="5"] {
-    width: 50%;
+
+.ratio[data-per="5"] {
+  width: 5%;
 }
-.ratio[data-per^="6"] {
-    width: 60%;
+
+.ratio[data-per="6"] {
+  width: 6%;
 }
-.ratio[data-per^="7"] {
-    width: 70%;
+
+.ratio[data-per="7"] {
+  width: 7%;
 }
-.ratio[data-per^="8"] {
-    width: 80%;
+
+.ratio[data-per="8"] {
+  width: 8%;
 }
-.ratio[data-per^="9"] {
-    width: 90%;
+
+.ratio[data-per="9"] {
+  width: 9%;
+}
+
+.ratio[data-per="10"] {
+  width: 10%;
+}
+
+.ratio[data-per="11"] {
+  width: 11%;
+}
+
+.ratio[data-per="12"] {
+  width: 12%;
+}
+
+.ratio[data-per="13"] {
+  width: 13%;
+}
+
+.ratio[data-per="14"] {
+  width: 14%;
+}
+
+.ratio[data-per="15"] {
+  width: 15%;
+}
+
+.ratio[data-per="16"] {
+  width: 16%;
+}
+
+.ratio[data-per="17"] {
+  width: 17%;
+}
+
+.ratio[data-per="18"] {
+  width: 18%;
+}
+
+.ratio[data-per="19"] {
+  width: 19%;
+}
+
+.ratio[data-per="20"] {
+  width: 20%;
+}
+
+.ratio[data-per="21"] {
+  width: 21%;
+}
+
+.ratio[data-per="22"] {
+  width: 22%;
+}
+
+.ratio[data-per="23"] {
+  width: 23%;
+}
+
+.ratio[data-per="24"] {
+  width: 24%;
+}
+
+.ratio[data-per="25"] {
+  width: 25%;
+}
+
+.ratio[data-per="26"] {
+  width: 26%;
+}
+
+.ratio[data-per="27"] {
+  width: 27%;
+}
+
+.ratio[data-per="28"] {
+  width: 28%;
+}
+
+.ratio[data-per="29"] {
+  width: 29%;
+}
+
+.ratio[data-per="30"] {
+  width: 30%;
+}
+
+.ratio[data-per="31"] {
+  width: 31%;
+}
+
+.ratio[data-per="32"] {
+  width: 32%;
+}
+
+.ratio[data-per="33"] {
+  width: 33%;
+}
+
+.ratio[data-per="34"] {
+  width: 34%;
+}
+
+.ratio[data-per="35"] {
+  width: 35%;
+}
+
+.ratio[data-per="36"] {
+  width: 36%;
+}
+
+.ratio[data-per="37"] {
+  width: 37%;
+}
+
+.ratio[data-per="38"] {
+  width: 38%;
+}
+
+.ratio[data-per="39"] {
+  width: 39%;
+}
+
+.ratio[data-per="40"] {
+  width: 40%;
+}
+
+.ratio[data-per="41"] {
+  width: 41%;
+}
+
+.ratio[data-per="42"] {
+  width: 42%;
+}
+
+.ratio[data-per="43"] {
+  width: 43%;
+}
+
+.ratio[data-per="44"] {
+  width: 44%;
+}
+
+.ratio[data-per="45"] {
+  width: 45%;
+}
+
+.ratio[data-per="46"] {
+  width: 46%;
+}
+
+.ratio[data-per="47"] {
+  width: 47%;
+}
+
+.ratio[data-per="48"] {
+  width: 48%;
+}
+
+.ratio[data-per="49"] {
+  width: 49%;
+}
+
+.ratio[data-per="50"] {
+  width: 50%;
+}
+
+.ratio[data-per="51"] {
+  width: 51%;
+}
+
+.ratio[data-per="52"] {
+  width: 52%;
+}
+
+.ratio[data-per="53"] {
+  width: 53%;
+}
+
+.ratio[data-per="54"] {
+  width: 54%;
+}
+
+.ratio[data-per="55"] {
+  width: 55%;
+}
+
+.ratio[data-per="56"] {
+  width: 56%;
+}
+
+.ratio[data-per="57"] {
+  width: 57%;
+}
+
+.ratio[data-per="58"] {
+  width: 58%;
+}
+
+.ratio[data-per="59"] {
+  width: 59%;
+}
+
+.ratio[data-per="60"] {
+  width: 60%;
+}
+
+.ratio[data-per="61"] {
+  width: 61%;
+}
+
+.ratio[data-per="62"] {
+  width: 62%;
+}
+
+.ratio[data-per="63"] {
+  width: 63%;
+}
+
+.ratio[data-per="64"] {
+  width: 64%;
+}
+
+.ratio[data-per="65"] {
+  width: 65%;
+}
+
+.ratio[data-per="66"] {
+  width: 66%;
+}
+
+.ratio[data-per="67"] {
+  width: 67%;
+}
+
+.ratio[data-per="68"] {
+  width: 68%;
+}
+
+.ratio[data-per="69"] {
+  width: 69%;
+}
+
+.ratio[data-per="70"] {
+  width: 70%;
+}
+
+.ratio[data-per="71"] {
+  width: 71%;
+}
+
+.ratio[data-per="72"] {
+  width: 72%;
+}
+
+.ratio[data-per="73"] {
+  width: 73%;
+}
+
+.ratio[data-per="74"] {
+  width: 74%;
+}
+
+.ratio[data-per="75"] {
+  width: 75%;
+}
+
+.ratio[data-per="76"] {
+  width: 76%;
+}
+
+.ratio[data-per="77"] {
+  width: 77%;
+}
+
+.ratio[data-per="78"] {
+  width: 78%;
+}
+
+.ratio[data-per="79"] {
+  width: 79%;
+}
+
+.ratio[data-per="80"] {
+  width: 80%;
+}
+
+.ratio[data-per="81"] {
+  width: 81%;
+}
+
+.ratio[data-per="82"] {
+  width: 82%;
+}
+
+.ratio[data-per="83"] {
+  width: 83%;
+}
+
+.ratio[data-per="84"] {
+  width: 84%;
+}
+
+.ratio[data-per="85"] {
+  width: 85%;
+}
+
+.ratio[data-per="86"] {
+  width: 86%;
+}
+
+.ratio[data-per="87"] {
+  width: 87%;
+}
+
+.ratio[data-per="88"] {
+  width: 88%;
+}
+
+.ratio[data-per="89"] {
+  width: 89%;
+}
+
+.ratio[data-per="90"] {
+  width: 90%;
+}
+
+.ratio[data-per="91"] {
+  width: 91%;
+}
+
+.ratio[data-per="92"] {
+  width: 92%;
+}
+
+.ratio[data-per="93"] {
+  width: 93%;
+}
+
+.ratio[data-per="94"] {
+  width: 94%;
+}
+
+.ratio[data-per="95"] {
+  width: 95%;
+}
+
+.ratio[data-per="96"] {
+  width: 96%;
+}
+
+.ratio[data-per="97"] {
+  width: 97%;
+}
+
+.ratio[data-per="98"] {
+  width: 98%;
+}
+
+.ratio[data-per="99"] {
+  width: 99%;
+}
+
+.ratio[data-per="100"] {
+  width: 100%;
 }

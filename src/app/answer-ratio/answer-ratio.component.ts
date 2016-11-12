@@ -21,7 +21,7 @@ export class AnswerRatioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.$ans.getAnswers()
+    this.$ans.getAnswers( 24 )
       .subscribe( ans => {
         this.answers = ans.map( ans => ans["answer"]);
 
@@ -29,16 +29,11 @@ export class AnswerRatioComponent implements OnInit {
       });
   }
 
-  answerCount( isTrue?: boolean ): number {
-    let ans = this.answers;
-
-    return isTrue === undefined ? 
-      ans.length
-      :
-      ans.filter( ans => ans == isTrue ).length
+  trueCount(): number {
+    return this.answers.filter( ans => ans == true ).length;
   }
 
   calcAnsPer( isTrue: boolean = true ): number {
-    return ( 100 / this.answerCount() ) * this.answerCount( isTrue );
+    return Math.round(( 100 / this.answers.length ) * this.trueCount());
   }
 }
