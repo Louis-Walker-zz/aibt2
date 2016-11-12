@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AnswerRatioComponent } from './answer-ratio/answer-ratio.component';
 
 import { AnswerPipe } from './answer.pipe';
+import { UnixPassedPipe } from './unix-passed.pipe';
 
 import { firebaseConfig } from "./firebase.config";
 
@@ -17,7 +18,8 @@ import { firebaseConfig } from "./firebase.config";
   declarations: [
     AppComponent,
     AnswerRatioComponent,
-    AnswerPipe
+    AnswerPipe,
+    UnixPassedPipe
   ],
   imports: [
     BrowserModule,
