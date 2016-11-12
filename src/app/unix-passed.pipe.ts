@@ -7,10 +7,10 @@ export class UnixPassedPipe implements PipeTransform {
   transform( value: number ): string {
     let seconds: number = ( Date.now() - value ) / 1000;
 
-    return this.unitPush( seconds );
+    return this.unitFormat( seconds );
   }
 
-  unitPush( t ): any {
+  unitFormat( t ): any {
     let unitsIndex = 0;
     let units = ["seconds", "minutes", "hours", "days"];
 
