@@ -22,7 +22,13 @@
     <md-card-title>Recent Answers</md-card-title>
 
     <md-card-content>
-      
+      <ul>
+        <li *ngFor="let ans of answers">
+          <img 
+            [attr.alt]="ans.country"
+            [attr.src]="'../../assets/img/flags/' + ans.country + '.png'" />
+        </li>
+      </ul>
     </md-card-content>
   </md-card>
 </div>

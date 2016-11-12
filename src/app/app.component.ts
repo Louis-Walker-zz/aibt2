@@ -24,6 +24,8 @@ export class AppComponent implements OnInit {
   @LocalStorage()
   private lastAnswer: any;
 
+  private answers: any[];
+
   constructor(
     private $sub: SubtitleService,
     private $ans: AnswerService,
@@ -34,6 +36,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.$ans.generateAnswer();
+
+    this.$ans.getAnswers( 8 )
+      .subscribe( ans => this.answers = ans );
 
     this.subtitle = this.$sub.getRandom();
   }
