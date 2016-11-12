@@ -17,14 +17,12 @@ import { LocalStorage, LocalStorageService } from "ng2-webstorage";
   ]
 })
 export class AppComponent implements OnInit {
-  private ver: String = "1.0.0";
+  private ver: string = "1.0.0";
 
-  private subtitle: String;
+  private subtitle: string;
 
   @LocalStorage()
   private lastAnswer: any;
-
-  private answers$: Observable<Boolean>;
 
   constructor(
     private $sub: SubtitleService,

@@ -20,7 +20,7 @@ interface Answer {
 
 @Injectable()
 export class AnswerService {
-  private answers$: FirebaseListObservable<any> = this.$af.database.list("/answers");
+  private answers$: FirebaseListObservable<any[]> = this.$af.database.list("/answers");
 
   @LocalStorage()
   private lastAnswer: Answer;
@@ -30,7 +30,8 @@ export class AnswerService {
     private $jsonp: Jsonp,
     private $local: LocalStorageService
   ) {
-    
+
+    // Initiate new clients
     if ( !( this.lastAnswer)) {
       this.lastAnswer = {
         "answer": null,
@@ -55,7 +56,7 @@ export class AnswerService {
 
   newable() {
     return new Promise(( resolve ) => {
-      resolve( this.lastAnswer.timestamp <= ( Date.now() - 86400000 || null ) ? true : false );
+      resolve( this.lastAnswer.timestamp <= Date.now() - 86400000 ? true : false );
     });
   };
 
@@ -81,15 +82,23 @@ export class AnswerService {
   private postAnswer( answer: Boolean = this.lastAnswer.answer ): Promise<any> {
     let _ans = this.lastAnswer;
 
-    return this.newable().then( newable => 
-      newable ?
-        this.getGeolocation().then( geo =>
-          this.answers$.push({
-            answer,
-            "ip": geo["ip"],
-            "country": geo["country_code"]
-          })
-        ): null
-    );
+    return this.getGeolocation().then( geo =>
+      this.answers$.push({
+        answer,
+        "ip": geo["ip"],
+        "country": geo["country_code"]
+      })
+    )
+  };
+
+  public getAnswers( limitToLast: Number = 10 ): FirebaseListObservable<any[]> {
+    let answersQuery: Object = {
+      query: {
+        limitToLast,
+        orderByKey: true
+      }
+    };
+
+    return this.$af.database.list("/answers", answersQuery);
   };
 };

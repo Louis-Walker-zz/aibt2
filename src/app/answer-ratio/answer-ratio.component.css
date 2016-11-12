@@ -1,0 +1,46 @@
+.answer-ratio {
+    display: flex;
+    width: 60%;
+    height: 3px;
+    margin: 2vh auto 0;
+}
+
+.ratio {
+    height: 3px;
+}
+
+.ratio--true {
+    background-color: green;
+}
+
+.ratio--false {
+    background-color: red;
+}
+
+.ratio[data-per^="1"] {
+    width: 10%;
+}
+.ratio[data-per^="2"] {
+    width: 20%;
+}
+.ratio[data-per^="3"] {
+    width: 30%;
+}
+.ratio[data-per^="4"] {
+    width: 40%;
+}
+.ratio[data-per^="5"] {
+    width: 50%;
+}
+.ratio[data-per^="6"] {
+    width: 60%;
+}
+.ratio[data-per^="7"] {
+    width: 70%;
+}
+.ratio[data-per^="8"] {
+    width: 80%;
+}
+.ratio[data-per^="9"] {
+    width: 90%;
+}
