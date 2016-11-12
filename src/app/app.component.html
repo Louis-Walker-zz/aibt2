@@ -11,8 +11,8 @@
     <md-card-subtitle>{{subtitle}}</md-card-subtitle>
 
     <md-card-content>
-      <span [attr.class]="'answer ' + 'answer--' + answer"
-      >{{answer | answer}}</span>
+      <span [attr.class]="'answer ' + 'answer--' + lastAnswer.answer"
+      >{{lastAnswer.answer | answer}}</span>
 
       <aibt-answer-ratio [answers]="answers$"></aibt-answer-ratio>
     </md-card-content>

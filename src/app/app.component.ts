@@ -5,6 +5,8 @@ import { AnswerService } from './answer.service';
 
 import { Observable } from "rxjs/Observable";
 
+import { LocalStorage, LocalStorageService } from "ng2-webstorage";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,12 +21,15 @@ export class AppComponent implements OnInit {
 
   private subtitle: String;
 
-  private answer: Boolean;
+  @LocalStorage()
+  private lastAnswer: any;
+
   private answers$: Observable<Boolean>;
 
   constructor(
     private $sub: SubtitleService,
     private $ans: AnswerService,
+    private $local: LocalStorageService
   ) {
 
   }

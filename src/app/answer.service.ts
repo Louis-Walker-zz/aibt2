@@ -6,6 +6,7 @@ import { Jsonp, URLSearchParams } from '@angular/http';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 // rx-operators
+import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/toPromise';
 
 // ng-plugins
@@ -47,17 +48,13 @@ export class AnswerService {
           "timestamp": Date.now()
         });
 
-        this.postAnswer( this.lastAnswer.answer );
+        this.postAnswer();
       }
     })
   }
 
-  getAnswer(): Boolean {
-    return this.lastAnswer.answer;
-  }
-
   newable() {
-    return new Promise(( resolve, reject ) => {
+    return new Promise(( resolve ) => {
       resolve( this.lastAnswer.timestamp <= ( Date.now() - 86400000 || null ) ? true : false );
     });
   };
@@ -81,7 +78,7 @@ export class AnswerService {
   };
 
   // Firebase Methods
-  postAnswer( answer: Boolean ): Promise<any> {
+  private postAnswer( answer: Boolean = this.lastAnswer.answer ): Promise<any> {
     let _ans = this.lastAnswer;
 
     return this.newable().then( newable => 
