@@ -1,7 +1,9 @@
+@import "../assets/css/flags.css";
+
 .app-wrapper {
     width: 60%;
-    max-width: 900px;
-    margin: 2vh auto;
+    max-width: 700px;
+    margin: 4vh auto;
 }
 
 .app-header {
@@ -28,4 +30,43 @@
 
 .answer--false {
     color: red;
+}
+
+.answer-row {
+    display: flex;
+    margin: 0 0 1vh;
+}
+
+.answer-row div:nth-child(1) {
+    width: 2px;
+    height: 11px;
+    margin: 0 4% 0 0;
+}
+
+.answer-true {
+    background-color: green;
+}
+
+.answer-false {
+    background-color: red;
+}
+
+.answer-row div:nth-child(2) {
+    width: 16px;
+    min-width: 16px;
+    max-width: 16px;
+    height: 11px;
+    margin: 0 2% 0 0;
+    background-image: url('../assets/img/flags.png');
+}
+
+.answer-row span:nth-child(3) {
+    width: calc(64% - 13px);
+    margin: 0 1vw 0 0;
+    text-align: left;
+}
+
+.answer-row span:nth-child(4) {
+    color: rgba(0, 0, 0, .6);
+    font-style: italic;
 }
