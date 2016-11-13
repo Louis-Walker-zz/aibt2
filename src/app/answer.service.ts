@@ -72,8 +72,8 @@ export class AnswerService {
         console.log(err);
 
         return {
-          "country_code": "",
-          "country_name": ""
+          "country_code": "AN",
+          "country_name": "Anonymous"
         }
       });
   };
