@@ -72,7 +72,6 @@ export class AnswerService {
         console.log(err);
 
         return {
-          "ip": "",
           "country_code": "",
           "country_name": ""
         }
@@ -90,7 +89,6 @@ export class AnswerService {
         "answer": answer.answer,
         "country_code": geo["country_code"],
         "country_name": geo["country_name"],
-        "ip": geo["ip"],
         "timestamp": answer.timestamp
       })
     )
