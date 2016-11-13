@@ -65,7 +65,7 @@ export class AnswerService {
     let params = new URLSearchParams();
     params.set("callback", "JSONP_CALLBACK");
 
-    return this.$jsonp.get("http://freegeoip.net/json", { search: params })
+    return this.$jsonp.get("https://freegeoip.net/json", { search: params })
       .toPromise()
       .then( res => res.json())
       .catch( err => {
