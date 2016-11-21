@@ -1,9 +1,11 @@
 @import "../assets/css/flags.css";
+@import "../assets/css/fonts.css";
 
 .app-wrapper {
     width: 60%;
     max-width: 700px;
     margin: 4vh auto;
+    font-family: "Roboto", sans-serif;
 }
 
 .app-header {
@@ -14,6 +16,7 @@
 
 .copyright, .version {
     width: 50%;
+    font-size: 14px;
 }
 
 .version {
