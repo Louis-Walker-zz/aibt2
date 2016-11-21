@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { AnswerRatioComponent } from './answer-ratio/answer-ratio.component';
 
 import { AnswerPipe } from './answer.pipe';
-import { UnixPassedPipe } from './unix-passed.pipe';
+import { UnixPastPipe } from './unix-past.pipe';
 import { ToCasePipe } from './to-case.pipe';
 
 import { firebaseConfig } from "./firebase.config";
@@ -20,7 +20,7 @@ import { firebaseConfig } from "./firebase.config";
     AppComponent,
     AnswerRatioComponent,
     AnswerPipe,
-    UnixPassedPipe,
+    UnixPastPipe,
     ToCasePipe
   ],
   imports: [

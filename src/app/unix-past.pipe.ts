@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'unixPassed'
+  name: 'unixPast'
 })
-export class UnixPassedPipe implements PipeTransform {
+export class UnixPastPipe implements PipeTransform {
   transform( value: number ): string {
     let seconds: number = ( Date.now() - value ) / 1000;
 

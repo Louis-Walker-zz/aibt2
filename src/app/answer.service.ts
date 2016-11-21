@@ -79,9 +79,7 @@ export class AnswerService {
   };
 
   // Firebase Methods
-  private postAnswer( 
-    answer: Answer = this.lastAnswer
-  ): Promise<any> {
+  private postAnswer( answer: Answer = this.lastAnswer ): Promise<any> {
     let _ans = this.lastAnswer;
 
     return this.getGeolocation().then( geo =>
