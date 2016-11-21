@@ -41,7 +41,7 @@ export class AnswerService {
   }
 
   // Utitlity Methods
-  generateAnswer(): Promise<any> {
+  public generateAnswer(): Promise<any> {
     return this.newable().then( newable => {
       if ( newable ) {
         this.$local.store("lastAnswer", {
@@ -54,20 +54,20 @@ export class AnswerService {
     })
   }
 
-  newable(): Promise<boolean> {
+  private newable(): Promise<boolean> {
     return new Promise(( resolve ) => {
       resolve( this.lastAnswer.timestamp <= Date.now() - 86400000 ? true : false );
     });
   };
 
-  returnable(): Promise<boolean> {
+  public returnable(): Promise<boolean> {
     return new Promise(( resolve ) => {
       resolve( !!this.lastAnswer.timestamp );
     });
   };
 
   // freegeoip Method
-  getGeolocation(): Promise<Object> {
+  private getGeolocation(): Promise<Object> {
     let params = new URLSearchParams();
     params.set("callback", "JSONP_CALLBACK");
 

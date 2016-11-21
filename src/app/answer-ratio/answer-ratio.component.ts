@@ -26,11 +26,11 @@ export class AnswerRatioComponent implements OnInit {
       });
   }
 
-  trueCount(): number {
-    return this.answers.filter( ans => ans == true ).length;
+  private calcAnsPer( isTrue: boolean = true ): number {
+    return Math.round(( 100 / this.answers.length ) * this.trueCount());
   }
 
-  calcAnsPer( isTrue: boolean = true ): number {
-    return Math.round(( 100 / this.answers.length ) * this.trueCount());
+  public trueCount(): number {
+    return this.answers.filter( ans => ans == true ).length;
   }
 }

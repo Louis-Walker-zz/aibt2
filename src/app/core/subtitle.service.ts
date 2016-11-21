@@ -20,7 +20,7 @@ export class SubtitleService {
 
   constructor( private $ans: AnswerService ) {}
 
-  getRandom(): Promise<string> {
+  public getRandom(): Promise<string> {
     return this.$ans.returnable()
       .then(( ret ) => {
         ret ?
