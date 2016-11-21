@@ -54,9 +54,15 @@ export class AnswerService {
     })
   }
 
-  newable() {
+  newable(): Promise<boolean> {
     return new Promise(( resolve ) => {
       resolve( this.lastAnswer.timestamp <= Date.now() - 86400000 ? true : false );
+    });
+  };
+
+  returnable(): Promise<boolean> {
+    return new Promise(( resolve ) => {
+      resolve( !!this.lastAnswer.timestamp );
     });
   };
 

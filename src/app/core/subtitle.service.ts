@@ -1,14 +1,33 @@
 import { Injectable } from '@angular/core';
 
+import { AnswerService } from "./answer.service";
+
 @Injectable()
 export class SubtitleService {
-  private subs: Array<string> = [
+  private subtitles: Array<string> = [
     "Welcome!",
-    "Discover your soul.",
-    "Yummy Mtn. Dew"
+    "The best bag identifier on the web",
+    "Only the best can be bag",
+    "Tell your kids, tell your wife",
+    "Such bag, wow"
   ];
 
-  getRandom(): string {
-    return this.subs[ Math.floor( Math.random() * this.subs.length) ];
+  private subtitlesExtended: Array<string> = [
+    "Welcome back!",
+    "You think like bag...",
+    "Today's another day"
+  ];
+
+  constructor( private $ans: AnswerService ) {}
+
+  getRandom(): Promise<string> {
+    return this.$ans.returnable()
+      .then(( ret ) => {
+        ret ?
+          this.subtitles.push.apply( this.subtitles, this.subtitlesExtended )
+        : null;
+
+        return this.subtitles[ Math.floor( Math.random() * this.subtitles.length )]; 
+      });
   }
 }
