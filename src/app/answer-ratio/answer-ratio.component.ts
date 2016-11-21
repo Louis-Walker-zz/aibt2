@@ -2,15 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from "rxjs/Observable";
 
-import { AnswerService } from '../answer.service';
+import { AnswerService } from '../core/answer.service';
 
 @Component({
   selector: 'aibt-answer-ratio',
   templateUrl: './answer-ratio.component.html',
-  styleUrls: ['./answer-ratio.component.css'],
-  providers: [
-    AnswerService
-  ]
+  styleUrls: ['./answer-ratio.component.css']
 })
 export class AnswerRatioComponent implements OnInit {
   private answers: boolean[];

@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { JsonpModule } from '@angular/http';
 
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
 import { AngularFireModule } from 'angularfire2';
 import { MaterialModule } from '@angular/material';
 import { LocalStorageService } from "ng2-webstorage";
@@ -9,23 +12,18 @@ import { LocalStorageService } from "ng2-webstorage";
 import { AppComponent } from './app.component';
 import { AnswerRatioComponent } from './answer-ratio/answer-ratio.component';
 
-import { AnswerPipe } from './answer.pipe';
-import { UnixPastPipe } from './unix-past.pipe';
-import { ToCasePipe } from './to-case.pipe';
-
-import { firebaseConfig } from "./firebase.config";
+import { firebaseConfig } from "./shared/cfg/firebase.config";
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnswerRatioComponent,
-    AnswerPipe,
-    UnixPastPipe,
-    ToCasePipe
+    AnswerRatioComponent
   ],
   imports: [
     BrowserModule,
     JsonpModule,
+    CoreModule,
+    SharedModule,
     AngularFireModule.initializeApp(firebaseConfig),
     MaterialModule.forRoot()
   ],

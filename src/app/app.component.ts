@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SubtitleService } from './subtitle.service';
-import { AnswerService } from './answer.service';
+import { SubtitleService } from './core/subtitle.service';
+import { AnswerService } from './core/answer.service';
 
 import { Observable } from "rxjs/Observable";
 
@@ -10,11 +10,7 @@ import { LocalStorage } from "ng2-webstorage";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [
-    SubtitleService,
-    AnswerService
-  ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
   private ver: string = "1.0.0";

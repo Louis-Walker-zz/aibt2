@@ -34,4 +34,4 @@ testem.log
 Thumbs.db
 
 # passwords
-/src/app/firebase.config.ts
+/src/app/cfg/firebase.config.ts
