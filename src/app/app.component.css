@@ -35,6 +35,25 @@
 .answer-row {
     display: flex;
     margin: 0 0 1vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.answer-row:before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    transform: translate(-1px, 3px) rotate(45deg);
+    position: absolute;
+}
+
+.answer-row--true:before {
+    background-color: green;
+}
+
+.answer-row--false:before {
+    background-color: red;
 }
 
 .answer-row div:nth-child(1) {

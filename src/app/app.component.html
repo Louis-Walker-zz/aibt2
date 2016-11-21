@@ -11,8 +11,9 @@
     <md-card-subtitle>{{subtitle}}</md-card-subtitle>
 
     <md-card-content>
-      <span [attr.class]="'answer ' + 'answer--' + lastAnswer.answer"
-      >{{lastAnswer.answer | answer}}</span>
+      <span [attr.class]="'answer ' + 'answer--' + lastAnswer.answer">
+        {{lastAnswer.answer | answer}}
+      </span>
 
       <aibt-answer-ratio></aibt-answer-ratio>
     </md-card-content>
@@ -23,15 +24,12 @@
 
     <md-card-content>
       <ul>
-        <li class="answer-row" *ngFor="let ans of answers">
-          <div
-            [attr.class]="'answer-' + ans.answer"
-          >
-          </div>
+        <li *ngFor="let ans of answers"
+          [attr.class]="'answer-row answer-row--' + ans.answer"
+        >
+          <div [attr.class]="'answer-' + ans.answer"></div>
 
-          <div [attr.class]="'flag-' + ( ans.country_code | toCase: 'lowerCase' )"
-          >
-          </div>
+          <div [attr.class]="'flag-' + ( ans.country_code | toCase: 'lowerCase' )"></div>
 
           <span>{{ans.country_name}}</span>
 
