@@ -5,20 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class UnixPastPipe implements PipeTransform {
   transform( value: number ): string {
+    const units: Array<string> = ["seconds", "minutes", "hours", "days"];
+
     let seconds: number = ( Date.now() - value ) / 1000;
 
-    return this.unitFormat( seconds );
-  }
-
-  unitFormat( t ): any {
-    let unitsIndex = 0;
-    let units = ["seconds", "minutes", "hours", "days"];
-
-    while( t > 60 ) {
+    let unitsIndex: number = 0;
+    while( seconds > 60 || ( unitsIndex >= 2 && seconds > 24 ) ) {
       unitsIndex++;
-      t = t / 60;
+
+      unitsIndex >= 2 ?
+        seconds = seconds / 24
+      : seconds = seconds / 60;
     }
 
-    return `${ Math.floor(t) } ${ units[unitsIndex] } ago`;
+    return `${ Math.floor(seconds) } ${ units[unitsIndex] } ago`;
   }
 }
