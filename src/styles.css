@@ -18,3 +18,27 @@ md-card {
     margin-bottom: 4vh;
     text-align: center;
 }
+
+/* App Init Loader Styles */
+.loader {
+    display: block;
+    width: 60%;
+    margin: 32vh auto;
+    color: white;
+    text-align: center;
+}
+
+.loader:before {
+    content: "Are you bag today?";
+    display: block;
+    width: 100%;
+    margin-bottom: 2vh;
+    font: 500 32px "Roboto", sans-serif;
+}
+
+.loader:after {
+    content: "Loading vital assets...";
+    display: block;
+    width: 100%;
+    font: 300 18px "Roboto", sans-serif;
+}
