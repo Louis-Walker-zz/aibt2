@@ -1,6 +1,12 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true
+    "answers": {
+      ".read": true,
+
+      "$answer": {
+        ".write": true,
+        ".validate": "newData.hasChildren(['answer', 'country_code', 'country_name', 'timestamp'])"
+      }
+    }
   }
 }
