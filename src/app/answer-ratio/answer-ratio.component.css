@@ -9,12 +9,22 @@
     height: 3px;
 }
 
-.ratio--true {
-    background-color: green;
+.ratio:after {
+  content: attr(data-per) "%";
+  display: inline-block;
+  padding: 2px 4px;
+  font: 700 12px "Roboto", sans-serif;
+  color: white;
+  box-shadow: 2px 2px 1px -1px rgba(0, 0, 0, .26);
+  transform: translateY(-8px);
 }
 
-.ratio--false {
-    background-color: red;
+.ratio--true, .ratio--true:after {
+  background-color: green;
+}
+
+.ratio--false, .ratio--false:after {
+  background-color: red;
 }
 
 .ratio[data-per="1"] {

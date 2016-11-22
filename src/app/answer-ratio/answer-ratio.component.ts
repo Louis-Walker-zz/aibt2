@@ -13,24 +13,22 @@ export class AnswerRatioComponent implements OnInit {
   private answers: boolean[];
   private truePer: number = 50;
 
-  constructor(
-    private $ans: AnswerService
-  ) { }
+  constructor( private $ans: AnswerService ) {}
 
   ngOnInit() {
     this.$ans.getAnswers( 24 )
       .subscribe( ans => {
         this.answers = ans.map( ans => ans["answer"]);
 
-        this.truePer = this.calcAnsPer();
+        this.truePer = this.calcTruePer();
       });
   }
 
-  private calcAnsPer( isTrue: boolean = true ): number {
-    return Math.round(( 100 / this.answers.length ) * this.trueCount());
+  private trueCount(): number {
+    return this.answers.filter( ans => ans == true ).length;
   }
 
-  public trueCount(): number {
-    return this.answers.filter( ans => ans == true ).length;
+  private calcTruePer(): number {
+    return Math.round(( 100 / this.answers.length ) * this.trueCount());
   }
 }
