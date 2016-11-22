@@ -12,11 +12,8 @@ import 'rxjs/add/operator/toPromise';
 // ng-plugins
 import { LocalStorage, LocalStorageService } from "ng2-webstorage";
 
-// Move to import
-interface Answer {
-  answer: Boolean;
-  timestamp: Number;
-}
+// Models
+import { Answer } from "../shared/models/answer.model";
 
 @Injectable()
 export class AnswerService {
