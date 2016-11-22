@@ -13,7 +13,7 @@ import { LocalStorage } from "ng2-webstorage";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private ver: string = "1.0.0";
+  private ver: string = "1.1.0";
 
   private subtitle: string;
 
