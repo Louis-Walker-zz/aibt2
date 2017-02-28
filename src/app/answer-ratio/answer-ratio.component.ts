@@ -16,16 +16,15 @@ export class AnswerRatioComponent implements OnInit {
   constructor( private $ans: AnswerService ) {}
 
   ngOnInit() {
-    this.$ans.getAnswers( 24 )
+    this.$ans.getAnswers( 50 )
       .subscribe( ans => {
-        this.answers = ans.map( ans => ans["answer"]);
-
+        this.answers = ans.map( ans => ans['answer']);
         this.truePer = this.calcTruePer();
       });
   }
 
   private trueCount(): number {
-    return this.answers.filter( ans => ans == true ).length;
+    return this.answers.filter( ans => ans === true ).length;
   }
 
   private calcTruePer(): number {

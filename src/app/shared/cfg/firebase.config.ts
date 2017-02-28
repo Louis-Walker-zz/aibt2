@@ -1,7 +1,7 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyB8BerBdlxBX_Dx_8mzUSUTuZyK9J35yQs",
-    authDomain: "aibt-1ecfa.firebaseapp.com",
-    databaseURL: "https://aibt-1ecfa.firebaseio.com",
-    storageBucket: "aibt-1ecfa.appspot.com",
-    messagingSenderId: "569198646228"
+    apiKey: 'IzaSyB8BerBdlxBX_Dx_8mzUSUTuZyK9J35yQs',
+    authDomain: 'ibt-1ecfa.firebaseapp.com',
+    databaseURL: 'ttps://aibt-1ecfa.firebaseio.com',
+    storageBucket: 'ibt-1ecfa.appspot.com',
+    messagingSenderId: '69198646228'
 };

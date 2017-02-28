@@ -6,18 +6,18 @@ import { Jsonp, URLSearchParams } from '@angular/http';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 // rx-operators
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
 // ng-plugins
-import { LocalStorage, LocalStorageService } from "ng2-webstorage";
+import { LocalStorage, LocalStorageService } from 'ng2-webstorage';
 
 // Models
-import { Answer } from "../shared/models/answer.model";
+import { Answer } from '../shared/models/answer.model';
 
 @Injectable()
 export class AnswerService {
-  private answers$: FirebaseListObservable<any[]> = this.$af.database.list("/answers");
+  private answers$: FirebaseListObservable<any[]> = this.$af.database.list('/answers');
 
   @LocalStorage()
   private lastAnswer: Answer;
@@ -31,8 +31,8 @@ export class AnswerService {
     // Initiate new clients
     if ( !( this.lastAnswer)) {
       this.lastAnswer = {
-        "answer": null,
-        "timestamp": null
+        'answer': null,
+        'timestamp': null
       }
     }
   }
@@ -41,9 +41,9 @@ export class AnswerService {
   public generateAnswer(): Promise<any> {
     return this.newable().then( newable => {
       if ( newable ) {
-        this.$local.store("lastAnswer", {
-          "answer": Math.random() > .5 ? true : false,
-          "timestamp": Date.now()
+        this.$local.store('lastAnswer', {
+          'answer': Math.random() > .5 ? true : false,
+          'timestamp': Date.now()
         });
 
         this.postAnswer();
@@ -57,45 +57,43 @@ export class AnswerService {
     });
   };
 
-  public returnable(): Promise<boolean> {
+  public isNewUser(): Promise<boolean> {
     return new Promise(( resolve ) => {
-      resolve( !!this.lastAnswer.timestamp );
+      resolve( !this.lastAnswer.timestamp );
     });
   };
 
   // freegeoip Method
   private getGeolocation(): Promise<Object> {
     let params = new URLSearchParams();
-    params.set("callback", "JSONP_CALLBACK");
+    params.set('callback', 'JSONP_CALLBACK');
 
-    return this.$jsonp.get("https://freegeoip.net/json", { search: params })
+    return this.$jsonp.get('https://freegeoip.net/json', { search: params })
       .toPromise()
       .then( res => res.json())
       .catch( err => {
         console.log(err);
 
         return {
-          "country_code": "AN",
-          "country_name": "Anonymous"
-        }
+          'country_code': 'AN',
+          'country_name': 'Anonymous'
+        };
       });
   };
 
   // Firebase Methods
   private postAnswer( answer: Answer = this.lastAnswer ): Promise<any> {
-    let _ans = this.lastAnswer;
-
     return this.getGeolocation().then( geo =>
       this.answers$.push({
-        "answer": answer.answer,
-        "country_code": geo["country_code"],
-        "country_name": geo["country_name"],
-        "timestamp": answer.timestamp
+        'answer': answer.answer,
+        'country_code': geo['country_code'],
+        'country_name': geo['country_name'],
+        'timestamp': answer.timestamp
       })
-    )
+    );
   };
 
-  public getAnswers( limitToLast: Number = 10 ): FirebaseListObservable<any[]> {
+  public getAnswers( limitToLast = 10 ): FirebaseListObservable<any[]> {
     let answersQuery: Object = {
       query: {
         limitToLast,
@@ -103,6 +101,6 @@ export class AnswerService {
       }
     };
 
-    return this.$af.database.list("/answers", answersQuery);
+    return this.$af.database.list('/answers', answersQuery);
   };
 };

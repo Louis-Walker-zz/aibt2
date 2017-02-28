@@ -3,9 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SubtitleService } from './core/subtitle.service';
 import { AnswerService } from './core/answer.service';
 
-import { Observable } from "rxjs/Observable";
-
-import { LocalStorage } from "ng2-webstorage";
+import { LocalStorage } from 'ng2-webstorage';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +11,7 @@ import { LocalStorage } from "ng2-webstorage";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private ver: string = "1.1.0";
+  private ver: string = '1.1.1';
 
   private subtitle: string;
 
@@ -25,9 +23,7 @@ export class AppComponent implements OnInit {
   constructor(
     private $sub: SubtitleService,
     private $ans: AnswerService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit() {
     this.$ans.generateAnswer();

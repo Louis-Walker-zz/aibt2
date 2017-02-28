@@ -7,12 +7,12 @@ import { SharedModule } from './shared/shared.module';
 
 import { AngularFireModule } from 'angularfire2';
 import { MaterialModule } from '@angular/material';
-import { LocalStorageService } from "ng2-webstorage";
+import { LocalStorageService } from 'ng2-webstorage';
 
 import { AppComponent } from './app.component';
 import { AnswerRatioComponent } from './answer-ratio/answer-ratio.component';
 
-import { firebaseConfig } from "./shared/cfg/firebase.config";
+import { firebaseConfig } from './shared/cfg/firebase.config';
 
 @NgModule({
   declarations: [
