@@ -33,7 +33,7 @@ export class AnswerService {
       this.lastAnswer = {
         'answer': null,
         'timestamp': null
-      }
+      };
     }
   }
 
@@ -48,7 +48,7 @@ export class AnswerService {
 
         this.postAnswer();
       }
-    })
+    });
   }
 
   private newable(): Promise<boolean> {
